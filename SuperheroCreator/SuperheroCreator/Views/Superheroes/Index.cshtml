@@ -4,7 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>List of Superheroes</h2>
+
+<img src="~/Content/batman-image.jpg" />
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -29,29 +31,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlterEgoName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrimarySuperheroAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SecondSuperheroAbility)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Catchphrase)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlterEgoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimarySuperheroAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondSuperheroAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catchphrase)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
